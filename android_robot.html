@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        *{
+            transition: all .5s;
+        }
+        ::before,::after{
+            transition: all .5s;
+        }
+        div {
+            width: 500px;
+            height: 550px;
+            margin: 100px auto;
+            border: 1px solid black;
+            position: relative;
+            /*top100*/
+        }
+
+        div::before, div::after {
+            content: "";
+            width: 5px;
+            height: 50px;
+            position: absolute;
+            background-color: greenyellow;
+            top: -10px;
+        }
+
+        div::before {
+            left: 200px;
+            transform: rotate(-30deg);
+            margin-top: 15px;
+
+        }
+
+        div::after {
+            right: 210px;
+            transform: rotate(30deg);
+            margin-top: 15px;
+        }
+
+        header {
+            margin: 0px auto;
+                margin-top: 30px;
+            width: 230px;
+            height: 115px;
+            border-radius: 100px 100px 0 0;
+            background-color: greenyellow;
+            position: relative;
+            top: 10px;
+        }
+
+        header::after,
+        header::before {
+            content: "";
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            background-color: red;
+            position: absolute;
+            top: 50px;
+            transition: all .5s;
+        }
+
+        header::after {
+            left: 40px;
+
+        }
+
+        header::before {
+            right: 40px;
+
+        }
+
+        main {
+            margin: 20px auto;
+            width: 230px;
+            height: 200px;
+            border-radius: 25px;
+            background-color: greenyellow;
+            position: relative;
+        }
+        main::after,
+        main::before {
+            content: "";
+            width: 50px;
+            height: 150px;
+            border-radius: 20px;
+            background-color: greenyellow;
+            position: absolute;
+            top: 30px;
+            transform-origin: top;
+        }
+
+        main::after {
+            left: -60px;
+
+        }
+
+        main::before {
+            right: -60px;
+
+        }
+        footer {
+            margin: 20px auto;
+            width: 230px;
+            height: 200px;
+            /*border-radius: 25px;*/
+            /*background-color: greenyellow;*/
+            position: relative;
+        }
+        footer::after,
+        footer::before {
+            content: "";
+            width: 50px;
+            height: 150px;
+            border-radius: 20px;
+            background-color: greenyellow;
+            position: absolute;
+            top: -30px;
+        }
+
+        footer::after {
+            left: 20px;
+
+        }
+
+        footer::before {
+            right: 20px;
+
+        }
+        div:hover header::before{
+            background-color: blue;
+           }
+        div:hover header::after{
+            background-color: blue;
+        }
+        div:hover::before{
+            transform: rotate(-60deg);
+        }
+        div:hover::after{
+            transform: rotate(60deg);
+        }
+        div:hover main::before{
+            transform: rotate(-15deg);
+        }
+        div:hover main::after{
+            transform: rotate(15deg);
+        }
+        div:hover footer::before{
+            height: 180px;
+        }
+        div:hover footer::after{
+            height: 180px;
+        }
+    </style>
+</head>
+<body>
+<div>
+    <header></header>
+    <main></main>
+    <footer></footer>
+</div>
+
+</body>
+</html>
